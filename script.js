@@ -43,49 +43,20 @@ console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
 
 // Calculator
 
-function zero(func) {
-  return func ? eval(`0${func}`) : 0
-}
-function one(func) {
-  return func ? eval(`1${func}`) : 1
-}
-function two(func) {
-  return func ? eval(`2${func}`) : 2
-}
-function three(func) {
-  return func ? eval(`3${func}`) : 3 
-}
-function four(func) {
-  return func ? eval(`4${func}`) : 4
-}
-function five(func) {
-  return func ? eval(`5${func}`) : 5
-}
-function six(func) {
-  return func ? eval(`6${func}`) : 6
-}
-function seven(func) {
-  return func ? eval(`7${func}`) : 7
-}
-function eight(func) {
-  return func ? eval(`8${func}`) : 8
-}
-function nine(func) {
-  return func ? eval(`9${func}`) : 9 
-}
-
-function plus(b) {
-  return `+${b}`
-}
-function minus(b) {
-  return `-${b}`
-}
-function times(b) {
-  return `*${b}`
-}
-function dividedBy(b) {
-  return `/${b}`
-}
+function zero(func) {return func ? eval(`0${func}`) : 0}
+function one(func) {return func ? eval(`1${func}`) : 1}
+function two(func) {return func ? eval(`2${func}`) : 2}
+function three(func) {return func ? eval(`3${func}`) : 3}
+function four(func) {return func ? eval(`4${func}`) : 4}
+function five(func) {return func ? eval(`5${func}`) : 5}
+function six(func) {return func ? eval(`6${func}`) : 6}
+function seven(func) {return func ? eval(`7${func}`) : 7}
+function eight(func) {return func ? eval(`8${func}`) : 8}
+function nine(func) {return func ? eval(`9${func}`) : 9}
+function plus(b) {return `+${b}`}
+function minus(b) {return `-${b}`}
+function times(b) {return `*${b}`}
+function dividedBy(b) {return `/${b}`}
 console.log(seven(times(five())));
 console.log(five(times(seven())));
 console.log(four(plus(nine())));
