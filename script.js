@@ -44,74 +44,34 @@ console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
 // Calculator
 
 function zero(func) {
-  if (func) {
-    return eval(`0${func}`)
-  } else {
-    return 0
-  }
+  return func ? eval(`0${func}`) : 0
 }
 function one(func) {
-  if (func) {
-    return eval(`1${func}`)
-  } else {
-    return 1
-  }
+  return func ? eval(`1${func}`) : 1
 }
 function two(func) {
-  if (func) {
-    return eval(`2${func}`)
-  } else {
-    return 2
-  }
+  return func ? eval(`2${func}`) : 2
 }
 function three(func) {
-  if (func) {
-    return eval(`3${func}`)
-  } else {
-    return 3
-  }
+  return func ? eval(`3${func}`) : 3 
 }
 function four(func) {
-  if (func) {
-    return eval(`4${func}`)
-  } else {
-    return 4
-  }
+  return func ? eval(`4${func}`) : 4
 }
 function five(func) {
-  if (func) {
-    return eval(`5${func}`)
-  } else {
-    return 5
-  }
+  return func ? eval(`5${func}`) : 5
 }
 function six(func) {
-  if (func) {
-    return eval(`6${func}`)
-  } else {
-    return 6
-  }
+  return func ? eval(`6${func}`) : 6
 }
 function seven(func) {
-  if (func) {
-    return eval(`7${func}`)
-  } else {
-    return 7
-  }
+  return func ? eval(`7${func}`) : 7
 }
 function eight(func) {
-  if (func) {
-    return eval(`8${func}`)
-  } else {
-    return 8
-  }
+  return func ? eval(`8${func}`) : 8
 }
 function nine(func) {
-  if (func) {
-    return eval(`9${func}`)
-  } else {
-    return 9
-  }
+  return func ? eval(`9${func}`) : 9 
 }
 
 function plus(b) {
