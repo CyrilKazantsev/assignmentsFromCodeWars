@@ -240,12 +240,46 @@ console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
 function descendingOrder(n){
   let arrNums = String(n).split("")
   return Number(arrNums.sort((a, b) => b - a).join(""))
-  for (let i = 0; i < n.length; i++) {
-    return n.sort((a, b) => b - a);
-  }
 }
 
 console.log(descendingOrder(123456789));
 console.log(descendingOrder(123489));
 console.log(descendingOrder(19));
 console.log(descendingOrder(1234));
+
+// Mumbling
+
+function accum(s) {
+  let arrStr = s.split("")
+  let arrRes = []
+  for (let i = 0; i < arrStr.length; i++) {
+    arrRes.push(`${arrStr[i].toUpperCase()}${arrStr[i].toLowerCase().repeat(i)}`)
+  }
+  return arrRes.join("-")
+}
+console.log(accum("ZpglnRxqenU"));
+console.log(accum("NyffsGeyylB"));
+console.log(accum("MjtkuBovqrU"));
+
+// Middle Character 
+
+function getMiddle(s) {
+  let arr = s.split("")
+  let num = s.split("").length / 2
+  return Number.isInteger(num) ? arr[num-1]+arr[num] : arr[num-0.5]
+}
+
+console.log(getMiddle("test"));
+console.log(getMiddle("testing"));
+console.log(getMiddle("middle"));
+
+// isSquare?
+
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n))
+}
+
+console.log(isSquare(-1));
+console.log(isSquare(0));
+console.log(isSquare(3));
+console.log(isSquare(25));
