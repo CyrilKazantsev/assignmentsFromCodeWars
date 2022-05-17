@@ -221,3 +221,31 @@ function chooseBestSum(t, k, ls) {
 
 let ts = [91, 74, 73, 85, 73, 81, 87]
 console.log(chooseBestSum(230, 3, ts));
+
+// Biggest and Lowest
+  function highAndLow(numbers){
+    let arr = numbers.split(" ");
+    let lowest = Number(arr[0]);
+    let biggest = Number(arr[0]);
+    for (let i = 0; i < arr.length; i++) {
+      if (Number(arr[i]) > biggest) {biggest = Number(arr[i])}
+      if (Number(arr[i]) < lowest) {lowest = Number(arr[i])}
+    }
+    return `${biggest} ${lowest}`
+  }
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+// Descending Order
+
+function descendingOrder(n){
+  let arrNums = String(n).split("")
+  return Number(arrNums.sort((a, b) => b - a).join(""))
+  for (let i = 0; i < n.length; i++) {
+    return n.sort((a, b) => b - a);
+  }
+}
+
+console.log(descendingOrder(123456789));
+console.log(descendingOrder(123489));
+console.log(descendingOrder(19));
+console.log(descendingOrder(1234));
