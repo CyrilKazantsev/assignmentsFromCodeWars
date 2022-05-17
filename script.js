@@ -167,3 +167,57 @@ console.log(humanReadable(0));
 console.log(humanReadable(3600));
 console.log(humanReadable(90));
 console.log(humanReadable(45246));
+
+
+// Squares 
+function perimeter(n) {
+  function fibonacci(v) {
+    let one = 0;
+    let two = 1;
+    let summ = 1;
+    for (let i = 1; i < v; i++) {
+      let current = one + two;
+      one = two;
+      two = current;
+      summ += current
+    }
+    return summ
+  }
+  return 4*fibonacci(n+1)
+}
+
+console.log(perimeter(0));
+console.log(perimeter(5));
+console.log(perimeter(7));
+console.log(perimeter(20));
+
+
+// Best travel 
+
+function chooseBestSum(t, k, ls) {
+  if (ls.length < k || k !== 3) {
+    return null
+  }
+  let result = 0;
+  for (let i = 0; i < ls.length; i++) {
+    for (let s = 0; s < ls.length; s++) {
+      if (i !== s) {
+        for (let n = 0; n < ls.length; n++) {
+          if (n !== s && n !== i) {
+            let attempt = ls[n] + ls[i] + ls[s];
+            if (attempt <= t && attempt >= result) {
+              result = attempt
+            } 
+          }
+        }
+      }
+    }
+  }
+  if (result === 0) {
+    return null
+  }
+  return result
+}
+
+let ts = [91, 74, 73, 85, 73, 81, 87]
+console.log(chooseBestSum(230, 3, ts));
