@@ -283,3 +283,12 @@ console.log(isSquare(-1));
 console.log(isSquare(0));
 console.log(isSquare(3));
 console.log(isSquare(25));
+
+// Shortest word 
+
+function findShort(s){
+  let lowest = s.split(" ")[0].length;
+  s.split(" ").map(w => {if (w.length < lowest) lowest = w.length})
+  return lowest
+}
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
