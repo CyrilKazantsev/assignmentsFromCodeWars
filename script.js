@@ -150,3 +150,20 @@ console.log(score([2, 3, 4, 6, 2])); // 0
 console.log(score([4, 4, 4, 3, 3])); // 400
 console.log(score([2, 4, 4, 5, 4])); // 450
 console.log(score([5, 5, 5, 5, 5])); // 700
+
+
+// Human Readable Time
+function humanReadable (seconds) {
+  let H = parseInt( seconds / 3600 )
+  let M = parseInt( seconds / 60 ) % 60
+  let S = seconds % 60
+  let pad = (time) => {
+    return time < 10 ?"0"+time:time;
+  }
+  return `${pad(H)}:${pad(M)}:${pad(S)}`;
+}
+
+console.log(humanReadable(0));
+console.log(humanReadable(3600));
+console.log(humanReadable(90));
+console.log(humanReadable(45246));
