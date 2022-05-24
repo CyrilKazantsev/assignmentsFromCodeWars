@@ -292,3 +292,53 @@ function findShort(s){
   return lowest
 }
 console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+
+// Isograms 
+
+function isIsogram(str){
+  return new Set(str.toUpperCase()).size === str.length
+}
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("isIsogram"));
+console.log(isIsogram("aba"));
+console.log(isIsogram(""));
+console.log(isIsogram("moOse"));
+
+// Exes and Ohs
+
+function XO(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
+console.log(XO('xo'));
+console.log(XO("xxOo"));
+console.log(XO("xxxOo"));
+
+
+// Stop gninnipS My sdroW!
+// Reverse words which have 5 and more letters in it
+function spinWords(string){
+  let arr = string.split(" ")
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length >= 5) {arr[i] = arr[i].split("").reverse().join("");}
+  }
+  return arr.join(" ")
+}
+console.log(spinWords("Welcome"));
+console.log(spinWords("Just kidding there is still one more"));
+
+// Fibonacci + negative 
+function fib(n) {
+  let prev = 0, next = 1, i = 0;
+  while (i < Math.abs(n)) {
+    let temp = next;
+    n < 0 ? next = BigInt(prev - next) : next = BigInt(prev + next);
+    prev = BigInt(temp);
+    i++
+  }
+  return BigInt(prev)
+}
+// console.log(fib(20000));
+// console.log(fib(20000));
+console.log(fib(1300000));
