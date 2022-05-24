@@ -397,3 +397,31 @@ let countBits = function(n) {
 console.log(countBits(4)); // 4 => 100 => one 1
 console.log(countBits(10)); // 10 => 1010 => two 1
 console.log(countBits(7)); // 7 => 111 => three 1
+
+// Find The Parity Outlier
+function findOutlier(integers){
+  let evenArr = [0]
+  let oddArr = [0]
+  for (let i = 0; i < integers.length; i++) {
+    if (integers[i] % 2 === 0) {
+      evenArr[0]++
+      evenArr[1] = integers[i]
+      if (evenArr[0] > 1 && typeof(oddArr[1]) !== "undefined") {
+        return oddArr[1]
+      }
+    } else {
+      oddArr[0]++
+      oddArr[1] = integers[i]
+      if (oddArr[0] > 1 && typeof(evenArr[1]) !== "undefined") {
+        return evenArr[1]
+      }
+    }
+  }
+  return integers[integers.length-1]
+  // it is possible to do with filter even/odd by length and then find the number but 
+  // the array could be huge and i suppose it is faster to cut the function when you find the answer
+}
+
+console.log(findOutlier([1,1,6,1,1]));
+console.log(findOutlier([0,0,0,0,3]));
+console.log(findOutlier([2,6,8,10,3]));
