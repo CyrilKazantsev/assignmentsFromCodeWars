@@ -17,10 +17,12 @@ function high(text) {
   }
   return largestWord;
 }
+
 console.log(high("its a good text"));
 
-// Short walk: return in 10 to the same place
 
+
+// Short walk: return in 10 to the same place
 function isValidWalk(walk) {
   if (walk.length !== 10) return false;
   let result = [0, 0];
@@ -42,17 +44,23 @@ function isValidWalk(walk) {
   }
   return result[0] === 0 && result[1] === 0;
 }
+
 console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
 
+
+
+// OddNumbers
 function findOdd(A) {
   for (let i = 0; i < A.length; i++) {
     if (A.filter((x) => x == A[i]).length % 2 !== 0) return A[i];
   }
 }
+
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
 
-// Calculator
 
+
+// Calculator
 function zero(func) {
   return func ? eval(`0${func}`) : 0;
 }
@@ -100,6 +108,8 @@ console.log(five(times(seven())));
 console.log(four(plus(nine())));
 console.log(eight(minus(three())));
 console.log(six(dividedBy(two())));
+
+
 
 // Greed is Good
 
@@ -152,6 +162,7 @@ console.log(score([2, 4, 4, 5, 4])); // 450
 console.log(score([5, 5, 5, 5, 5])); // 700
 
 
+
 // Human Readable Time
 function humanReadable (seconds) {
   let H = parseInt( seconds / 3600 )
@@ -167,6 +178,7 @@ console.log(humanReadable(0));
 console.log(humanReadable(3600));
 console.log(humanReadable(90));
 console.log(humanReadable(45246));
+
 
 
 // Squares 
@@ -192,8 +204,8 @@ console.log(perimeter(7));
 console.log(perimeter(20));
 
 
-// Best travel 
 
+// Best travel 
 function chooseBestSum(t, k, ls) {
   if (ls.length < k || k !== 3) {
     return null
@@ -222,6 +234,8 @@ function chooseBestSum(t, k, ls) {
 let ts = [91, 74, 73, 85, 73, 81, 87]
 console.log(chooseBestSum(230, 3, ts));
 
+
+
 // Biggest and Lowest
   function highAndLow(numbers){
     let arr = numbers.split(" ");
@@ -233,10 +247,12 @@ console.log(chooseBestSum(230, 3, ts));
     }
     return `${biggest} ${lowest}`
   }
+
 console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
 
-// Descending Order
 
+
+// Descending Order
 function descendingOrder(n){
   let arrNums = String(n).split("")
   return Number(arrNums.sort((a, b) => b - a).join(""))
@@ -247,8 +263,9 @@ console.log(descendingOrder(123489));
 console.log(descendingOrder(19));
 console.log(descendingOrder(1234));
 
-// Mumbling
 
+
+// Mumbling
 function accum(s) {
   let arrStr = s.split("")
   let arrRes = []
@@ -257,12 +274,14 @@ function accum(s) {
   }
   return arrRes.join("-")
 }
+
 console.log(accum("ZpglnRxqenU"));
 console.log(accum("NyffsGeyylB"));
 console.log(accum("MjtkuBovqrU"));
 
-// Middle Character 
 
+
+// Middle Character 
 function getMiddle(s) {
   let arr = s.split("")
   let num = s.split("").length / 2
@@ -273,8 +292,9 @@ console.log(getMiddle("test"));
 console.log(getMiddle("testing"));
 console.log(getMiddle("middle"));
 
-// isSquare?
 
+
+// isSquare?
 var isSquare = function(n){
   return Number.isInteger(Math.sqrt(n))
 }
@@ -284,36 +304,43 @@ console.log(isSquare(0));
 console.log(isSquare(3));
 console.log(isSquare(25));
 
-// Shortest word 
 
+
+// Shortest word 
 function findShort(s){
   let lowest = s.split(" ")[0].length;
   s.split(" ").map(w => {if (w.length < lowest) lowest = w.length})
   return lowest
 }
+
 console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
 
-// Isograms 
 
+
+// Isograms 
 function isIsogram(str){
   return new Set(str.toUpperCase()).size === str.length
 }
+
 console.log(isIsogram("Dermatoglyphics"));
 console.log(isIsogram("isIsogram"));
 console.log(isIsogram("aba"));
 console.log(isIsogram(""));
 console.log(isIsogram("moOse"));
 
-// Exes and Ohs
 
+
+// Exes and Ohs
 function XO(str) {
   let x = str.match(/x/gi);
   let o = str.match(/o/gi);
   return (x && x.length) === (o && o.length);
 }
+
 console.log(XO('xo'));
 console.log(XO("xxOo"));
 console.log(XO("xxxOo"));
+
 
 
 // Stop gninnipS My sdroW!
@@ -325,8 +352,11 @@ function spinWords(string){
   }
   return arr.join(" ")
 }
+
 console.log(spinWords("Welcome"));
 console.log(spinWords("Just kidding there is still one more"));
+
+
 
 // Fibonacci + negative 
 function fib(n) {
@@ -339,6 +369,21 @@ function fib(n) {
   }
   return BigInt(prev)
 }
+
+console.log(fib(100));
 // console.log(fib(20000));
-// console.log(fib(20000));
-console.log(fib(1300000));
+// console.log(fib(1300000));
+
+
+
+// Sum of Digits / Digital Root
+function digital_root(n) {
+  while (String(n).length > 1) {
+    n = String(eval(String(n).split("").join("+")))
+  }
+  return Number(n)
+}
+
+console.log(digital_root(16)); // 16 => 1 + 6 => 7
+console.log(digital_root(166)); // 166 => 1 + 6 + 6 => 13 => 1 + 3 => 4
+
