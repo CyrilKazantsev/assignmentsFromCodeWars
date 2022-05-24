@@ -387,3 +387,13 @@ function digital_root(n) {
 console.log(digital_root(16)); // 16 => 1 + 6 => 7
 console.log(digital_root(166)); // 166 => 1 + 6 + 6 => 13 => 1 + 3 => 4
 
+
+
+// Count ones in binary
+let countBits = function(n) {
+  return n.toString(2).split("").filter(a => a === "1").length
+};
+
+console.log(countBits(4)); // 4 => 100 => one 1
+console.log(countBits(10)); // 10 => 1010 => two 1
+console.log(countBits(7)); // 7 => 111 => three 1
