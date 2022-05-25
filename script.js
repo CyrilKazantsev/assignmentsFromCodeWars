@@ -398,6 +398,8 @@ console.log(countBits(4)); // 4 => 100 => one 1
 console.log(countBits(10)); // 10 => 1010 => two 1
 console.log(countBits(7)); // 7 => 111 => three 1
 
+
+
 // Find The Parity Outlier
 function findOutlier(integers){
   let evenArr = [0]
@@ -425,3 +427,20 @@ function findOutlier(integers){
 console.log(findOutlier([1,1,6,1,1]));
 console.log(findOutlier([0,0,0,0,3]));
 console.log(findOutlier([2,6,8,10,3]));
+
+
+
+// Convert string to camel case
+function toCamelCase(str){
+  if (str.length < 1) return str
+  let arr = str.replace(/[-_]/g, " ").split(" ")
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1)
+  }
+  return arr.join("")
+}
+
+console.log(toCamelCase("the_stealth_warrior")); // theStealthWarrior
+console.log(toCamelCase("The-Stealth-Warrior")); // TheStealthWarrior
+console.log(toCamelCase("A-B-C")); // ABC
+console.log(toCamelCase(''));
