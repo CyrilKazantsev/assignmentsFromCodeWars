@@ -444,3 +444,20 @@ console.log(toCamelCase("the_stealth_warrior")); // theStealthWarrior
 console.log(toCamelCase("The-Stealth-Warrior")); // TheStealthWarrior
 console.log(toCamelCase("A-B-C")); // ABC
 console.log(toCamelCase(''));
+
+
+// DNA string
+function DNAStrand(dna){
+  let result = ""
+  dna.split("").map(e => {
+    switch(e) {
+        case "A": result += "T"; break;
+        case "T": result += "A"; break;
+        case "C": result += "G"; break;
+        case "G": result += "C"; break;
+    }
+  })
+  return result 
+}
+
+console.log(DNAStrand("AAAA"));
