@@ -456,3 +456,14 @@ var uniqueInOrder = function (iterable) {
   return result;
 };
 console.log(uniqueInOrder("AAABBBCCCDDDAAA"));
+
+// Counting Duplicates
+function duplicateCount(text){
+  const counts = {};
+  if (text.length < 0) return 0
+  text = text.toLowerCase().split("")
+  text.forEach(function (x) {counts[x] = (counts[x] || 0) + 1;});
+  let result = Object.values(counts);
+  return result.filter(x => x >= 2).length
+}
+console.log("Number of duplicates:", duplicateCount("Indivisibilities")); // 2 
