@@ -20,8 +20,6 @@ function high(text) {
 
 console.log(high("its a good text"));
 
-
-
 // Short walk: return in 10 to the same place
 function isValidWalk(walk) {
   if (walk.length !== 10) return false;
@@ -47,8 +45,6 @@ function isValidWalk(walk) {
 
 console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
 
-
-
 // OddNumbers
 function findOdd(A) {
   for (let i = 0; i < A.length; i++) {
@@ -57,8 +53,6 @@ function findOdd(A) {
 }
 
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
-
-
 
 // Calculator
 function zero(func) {
@@ -109,15 +103,13 @@ console.log(four(plus(nine())));
 console.log(eight(minus(three())));
 console.log(six(dividedBy(two())));
 
-
-
 // Greed is Good
 
-//  Greed is a dice game played with five six-sided dice. Your mission, 
-// should you choose to accept it, is to score a throw according to these rules. 
+//  Greed is a dice game played with five six-sided dice. Your mission,
+// should you choose to accept it, is to score a throw according to these rules.
 // You will always be given an array with five six-sided dice values.
-// A single die can only be counted once in each roll. For example, a given "5" can 
-// only count as part of a triplet (contributing to the 500 points) or as a single 
+// A single die can only be counted once in each roll. For example, a given "5" can
+// only count as part of a triplet (contributing to the 500 points) or as a single
 // 50 points, but not both in the same roll.
 
 function score(dice) {
@@ -161,16 +153,14 @@ console.log(score([4, 4, 4, 3, 3])); // 400
 console.log(score([2, 4, 4, 5, 4])); // 450
 console.log(score([5, 5, 5, 5, 5])); // 700
 
-
-
 // Human Readable Time
-function humanReadable (seconds) {
-  let H = parseInt( seconds / 3600 )
-  let M = parseInt( seconds / 60 ) % 60
-  let S = seconds % 60
+function humanReadable(seconds) {
+  let H = parseInt(seconds / 3600);
+  let M = parseInt(seconds / 60) % 60;
+  let S = seconds % 60;
   let pad = (time) => {
-    return time < 10 ?"0"+time:time;
-  }
+    return time < 10 ? "0" + time : time;
+  };
   return `${pad(H)}:${pad(M)}:${pad(S)}`;
 }
 
@@ -179,9 +169,7 @@ console.log(humanReadable(3600));
 console.log(humanReadable(90));
 console.log(humanReadable(45246));
 
-
-
-// Squares 
+// Squares
 function perimeter(n) {
   function fibonacci(v) {
     let one = 0;
@@ -191,11 +179,11 @@ function perimeter(n) {
       let current = one + two;
       one = two;
       two = current;
-      summ += current
+      summ += current;
     }
-    return summ
+    return summ;
   }
-  return 4*fibonacci(n+1)
+  return 4 * fibonacci(n + 1);
 }
 
 console.log(perimeter(0));
@@ -203,12 +191,10 @@ console.log(perimeter(5));
 console.log(perimeter(7));
 console.log(perimeter(20));
 
-
-
-// Best travel 
+// Best travel
 function chooseBestSum(t, k, ls) {
   if (ls.length < k || k !== 3) {
-    return null
+    return null;
   }
   let result = 0;
   for (let i = 0; i < ls.length; i++) {
@@ -218,44 +204,44 @@ function chooseBestSum(t, k, ls) {
           if (n !== s && n !== i) {
             let attempt = ls[n] + ls[i] + ls[s];
             if (attempt <= t && attempt >= result) {
-              result = attempt
-            } 
+              result = attempt;
+            }
           }
         }
       }
     }
   }
   if (result === 0) {
-    return null
+    return null;
   }
-  return result
+  return result;
 }
 
-let ts = [91, 74, 73, 85, 73, 81, 87]
+let ts = [91, 74, 73, 85, 73, 81, 87];
 console.log(chooseBestSum(230, 3, ts));
 
-
-
 // Biggest and Lowest
-  function highAndLow(numbers){
-    let arr = numbers.split(" ");
-    let lowest = Number(arr[0]);
-    let biggest = Number(arr[0]);
-    for (let i = 0; i < arr.length; i++) {
-      if (Number(arr[i]) > biggest) {biggest = Number(arr[i])}
-      if (Number(arr[i]) < lowest) {lowest = Number(arr[i])}
+function highAndLow(numbers) {
+  let arr = numbers.split(" ");
+  let lowest = Number(arr[0]);
+  let biggest = Number(arr[0]);
+  for (let i = 0; i < arr.length; i++) {
+    if (Number(arr[i]) > biggest) {
+      biggest = Number(arr[i]);
     }
-    return `${biggest} ${lowest}`
+    if (Number(arr[i]) < lowest) {
+      lowest = Number(arr[i]);
+    }
   }
+  return `${biggest} ${lowest}`;
+}
 
 console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
 
-
-
 // Descending Order
-function descendingOrder(n){
-  let arrNums = String(n).split("")
-  return Number(arrNums.sort((a, b) => b - a).join(""))
+function descendingOrder(n) {
+  let arrNums = String(n).split("");
+  return Number(arrNums.sort((a, b) => b - a).join(""));
 }
 
 console.log(descendingOrder(123456789));
@@ -263,63 +249,57 @@ console.log(descendingOrder(123489));
 console.log(descendingOrder(19));
 console.log(descendingOrder(1234));
 
-
-
 // Mumbling
 function accum(s) {
-  let arrStr = s.split("")
-  let arrRes = []
+  let arrStr = s.split("");
+  let arrRes = [];
   for (let i = 0; i < arrStr.length; i++) {
-    arrRes.push(`${arrStr[i].toUpperCase()}${arrStr[i].toLowerCase().repeat(i)}`)
+    arrRes.push(
+      `${arrStr[i].toUpperCase()}${arrStr[i].toLowerCase().repeat(i)}`
+    );
   }
-  return arrRes.join("-")
+  return arrRes.join("-");
 }
 
 console.log(accum("ZpglnRxqenU"));
 console.log(accum("NyffsGeyylB"));
 console.log(accum("MjtkuBovqrU"));
 
-
-
-// Middle Character 
+// Middle Character
 function getMiddle(s) {
-  let arr = s.split("")
-  let num = s.split("").length / 2
-  return Number.isInteger(num) ? arr[num-1]+arr[num] : arr[num-0.5]
+  let arr = s.split("");
+  let num = s.split("").length / 2;
+  return Number.isInteger(num) ? arr[num - 1] + arr[num] : arr[num - 0.5];
 }
 
 console.log(getMiddle("test"));
 console.log(getMiddle("testing"));
 console.log(getMiddle("middle"));
 
-
-
 // isSquare?
-var isSquare = function(n){
-  return Number.isInteger(Math.sqrt(n))
-}
+var isSquare = function (n) {
+  return Number.isInteger(Math.sqrt(n));
+};
 
 console.log(isSquare(-1));
 console.log(isSquare(0));
 console.log(isSquare(3));
 console.log(isSquare(25));
 
-
-
-// Shortest word 
-function findShort(s){
+// Shortest word
+function findShort(s) {
   let lowest = s.split(" ")[0].length;
-  s.split(" ").map(w => {if (w.length < lowest) lowest = w.length})
-  return lowest
+  s.split(" ").map((w) => {
+    if (w.length < lowest) lowest = w.length;
+  });
+  return lowest;
 }
 
 console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
 
-
-
-// Isograms 
-function isIsogram(str){
-  return new Set(str.toUpperCase()).size === str.length
+// Isograms
+function isIsogram(str) {
+  return new Set(str.toUpperCase()).size === str.length;
 }
 
 console.log(isIsogram("Dermatoglyphics"));
@@ -328,8 +308,6 @@ console.log(isIsogram("aba"));
 console.log(isIsogram(""));
 console.log(isIsogram("moOse"));
 
-
-
 // Exes and Ohs
 function XO(str) {
   let x = str.match(/x/gi);
@@ -337,127 +315,144 @@ function XO(str) {
   return (x && x.length) === (o && o.length);
 }
 
-console.log(XO('xo'));
+console.log(XO("xo"));
 console.log(XO("xxOo"));
 console.log(XO("xxxOo"));
 
-
-
 // Stop gninnipS My sdroW!
 // Reverse words which have 5 and more letters in it
-function spinWords(string){
-  let arr = string.split(" ")
+function spinWords(string) {
+  let arr = string.split(" ");
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length >= 5) {arr[i] = arr[i].split("").reverse().join("");}
+    if (arr[i].length >= 5) {
+      arr[i] = arr[i].split("").reverse().join("");
+    }
   }
-  return arr.join(" ")
+  return arr.join(" ");
 }
 
 console.log(spinWords("Welcome"));
 console.log(spinWords("Just kidding there is still one more"));
 
-
-
-// Fibonacci + negative 
+// Fibonacci + negative
 function fib(n) {
-  let prev = 0, next = 1, i = 0;
+  let prev = 0,
+    next = 1,
+    i = 0;
   while (i < Math.abs(n)) {
     let temp = next;
-    n < 0 ? next = BigInt(prev - next) : next = BigInt(prev + next);
+    n < 0 ? (next = BigInt(prev - next)) : (next = BigInt(prev + next));
     prev = BigInt(temp);
-    i++
+    i++;
   }
-  return BigInt(prev)
+  return BigInt(prev);
 }
 
 console.log(fib(100));
 // console.log(fib(20000));
 // console.log(fib(1300000));
 
-
-
 // Sum of Digits / Digital Root
 function digital_root(n) {
   while (String(n).length > 1) {
-    n = String(eval(String(n).split("").join("+")))
+    n = String(eval(String(n).split("").join("+")));
   }
-  return Number(n)
+  return Number(n);
 }
 
 console.log(digital_root(16)); // 16 => 1 + 6 => 7
 console.log(digital_root(166)); // 166 => 1 + 6 + 6 => 13 => 1 + 3 => 4
 
-
-
 // Count ones in binary
-let countBits = function(n) {
-  return n.toString(2).split("").filter(a => a === "1").length
+let countBits = function (n) {
+  return n
+    .toString(2)
+    .split("")
+    .filter((a) => a === "1").length;
 };
 
 console.log(countBits(4)); // 4 => 100 => one 1
 console.log(countBits(10)); // 10 => 1010 => two 1
 console.log(countBits(7)); // 7 => 111 => three 1
 
-
-
 // Find The Parity Outlier
-function findOutlier(integers){
-  let evenArr = [0]
-  let oddArr = [0]
+function findOutlier(integers) {
+  let evenArr = [0];
+  let oddArr = [0];
   for (let i = 0; i < integers.length; i++) {
     if (integers[i] % 2 === 0) {
-      evenArr[0]++
-      evenArr[1] = integers[i]
-      if (evenArr[0] > 1 && typeof(oddArr[1]) !== "undefined") {
-        return oddArr[1]
+      evenArr[0]++;
+      evenArr[1] = integers[i];
+      if (evenArr[0] > 1 && typeof oddArr[1] !== "undefined") {
+        return oddArr[1];
       }
     } else {
-      oddArr[0]++
-      oddArr[1] = integers[i]
-      if (oddArr[0] > 1 && typeof(evenArr[1]) !== "undefined") {
-        return evenArr[1]
+      oddArr[0]++;
+      oddArr[1] = integers[i];
+      if (oddArr[0] > 1 && typeof evenArr[1] !== "undefined") {
+        return evenArr[1];
       }
     }
   }
-  return integers[integers.length-1]
-  // it is possible to do with filter even/odd by length and then find the number but 
+  return integers[integers.length - 1];
+  // it is possible to do with filter even/odd by length and then find the number but
   // the array could be huge and i suppose it is faster to cut the function when you find the answer
 }
 
-console.log(findOutlier([1,1,6,1,1]));
-console.log(findOutlier([0,0,0,0,3]));
-console.log(findOutlier([2,6,8,10,3]));
-
-
+console.log(findOutlier([1, 1, 6, 1, 1]));
+console.log(findOutlier([0, 0, 0, 0, 3]));
+console.log(findOutlier([2, 6, 8, 10, 3]));
 
 // Convert string to camel case
-function toCamelCase(str){
-  if (str.length < 1) return str
-  let arr = str.replace(/[-_]/g, " ").split(" ")
+function toCamelCase(str) {
+  if (str.length < 1) return str;
+  let arr = str.replace(/[-_]/g, " ").split(" ");
   for (let i = 1; i < arr.length; i++) {
-    arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1)
+    arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
   }
-  return arr.join("")
+  return arr.join("");
 }
 
 console.log(toCamelCase("the_stealth_warrior")); // theStealthWarrior
 console.log(toCamelCase("The-Stealth-Warrior")); // TheStealthWarrior
 console.log(toCamelCase("A-B-C")); // ABC
-console.log(toCamelCase(''));
-
+console.log(toCamelCase(""));
 
 // DNA string
-function DNAStrand(dna){
-  let result = ""
-  dna.split("").map(e => {
-    switch(e) {
-        case "A": result += "T"; break;
-        case "T": result += "A"; break;
-        case "C": result += "G"; break;
-        case "G": result += "C"; break;
+function DNAStrand(dna) {
+  let result = "";
+  dna.split("").map((e) => {
+    switch (e) {
+      case "A":
+        result += "T";
+        break;
+      case "T":
+        result += "A";
+        break;
+      case "C":
+        result += "G";
+        break;
+      case "G":
+        result += "C";
+        break;
     }
-  })
-  return result 
+  });
+  return result;
 }
 
 console.log(DNAStrand("AAAA"));
+
+// Unique in Order
+/*
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+*/
+var uniqueInOrder = function (iterable) {
+  iterable = [...iterable];
+  let result = [];
+  for (let i = 0; i < iterable.length; i++) {
+    if (iterable[i] != iterable[i - 1]) result.push(iterable[i]);
+  }
+  // console.log("iterable:", result); ["A", "B", "C", "D", "A"]
+  return result;
+};
+console.log(uniqueInOrder("AAABBBCCCDDDAAA"));
